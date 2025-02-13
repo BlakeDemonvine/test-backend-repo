@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡單的 Node.js 網站</title>
+</head>
+<body>
+    <h1>前端頁面</h1>
+    <p id="message">載入中...</p>
+
+    <script>
+        fetch("http://localhost:3000/api/message")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("message").innerText = data.message;
+            })
+            .catch(error => console.error("錯誤:", error));
+    </script>
+</body>
+</html>
