@@ -10,7 +10,7 @@
     <p id="message">載入中...</p>
 
     <script>
-        fetch("http://localhost:3000/api/message")
+        fetch("https://test-backend-repo-cg10.onrender.com")
             .then(response => response.json())
             .then(data => {
                 document.getElementById("message").innerText = data.message;
